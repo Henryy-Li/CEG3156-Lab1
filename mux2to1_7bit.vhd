@@ -15,7 +15,7 @@ architecture structural of mux2to1_7bit is
     signal temp1   : std_logic_vector(6 downto 0);          -- Intermediate value to check if d_in1 was selected.
     signal temp2   : std_logic_vector(6 downto 0);          -- Intermediate value to check if d_in2 was selected.
 
-    begin:
+    begin
     not_sel <= NOT(sel);
     
     temp1(6) <= d_in1(6) AND not_sel;
@@ -34,12 +34,12 @@ architecture structural of mux2to1_7bit is
     temp2(1) <= d_in2(1) AND sel;
     temp2(0) <= d_in2(0) AND sel;
 
-    d_out(6) <= temp1(6) AND temp2(6);
-    d_out(5) <= temp1(5) AND temp2(5);
-    d_out(4) <= temp1(4) AND temp2(4);
-    d_out(3) <= temp1(3) AND temp2(3);
-    d_out(2) <= temp1(2) AND temp2(2);
-    d_out(1) <= temp1(1) AND temp2(1);
-    d_out(0) <= temp1(0) AND temp2(0);
+    d_out(6) <= temp1(6) OR temp2(6);
+    d_out(5) <= temp1(5) OR temp2(5);
+    d_out(4) <= temp1(4) OR temp2(4);
+    d_out(3) <= temp1(3) OR temp2(3);
+    d_out(2) <= temp1(2) OR temp2(2);
+    d_out(1) <= temp1(1) OR temp2(1);
+    d_out(0) <= temp1(0) OR temp2(0);
 
 end structural;
