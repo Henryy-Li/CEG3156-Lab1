@@ -4,9 +4,9 @@ use ieee.std_logic_1164.all;
 entity mux2to1_8bit is
     port(
         sel     : in std_logic;
-        d_in1  : in std_logic_vector(7 downto 0);
-        d_in2  : in std_logic_vector(7 downto 0);
-        d_out   : in std_logic_vector(7 downto 0);
+        d_in1   : in std_logic_vector(7 downto 0);
+        d_in2   : in std_logic_vector(7 downto 0);
+        d_out   : out std_logic_vector(7 downto 0)
     );
 end mux2to1_8bit;
 
